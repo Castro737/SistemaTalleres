@@ -1,0 +1,39 @@
+<h2>Registro de Talleres</h2>
+
+<form (ngSubmit)="agregarTaller()">
+
+  <input type="text" [(ngModel)]="nombre" name="nombre" placeholder="Nombre" required>
+  <br><br>
+
+  <input type="text" [(ngModel)]="descripcion" name="descripcion" placeholder="Descripción">
+  <br><br>
+
+  <input type="date" [(ngModel)]="fecha" name="fecha">
+  <br><br>
+
+  <input type="text" [(ngModel)]="ubicacion" name="ubicacion" placeholder="Ubicación">
+  <br><br>
+
+  <button type="submit">Guardar</button>
+
+</form>
+
+<hr>
+
+<h3>Lista de Talleres</h3>
+
+<table border="1">
+  <tr>
+    <th>Nombre</th>
+    <th>Descripción</th>
+    <th>Fecha</th>
+    <th>Ubicación</th>
+  </tr>
+
+  <tr *ngFor="let t of talleres">
+    <td>{{ t.nombre }}</td>
+    <td>{{ t.descripcion }}</td>
+    <td>{{ t.fecha }}</td>
+    <td>{{ t.ubicacion }}</td>
+  </tr>
+</table>
